@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Smart.Blazor;
 using Todo.Web.Client;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.Services.AddSmart();
+
 
 builder.Services.AddHttpClient<TodoClient>(client =>
 {

@@ -1,3 +1,4 @@
+using Smart.Blazor;
 using Todo.Web.Server;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.AddRazorPages();
 
 // Add the forwarder to make sending requests to the backend easier
 builder.Services.AddHttpForwarder();
+builder.Services.AddSmart();
+
 
 var todoUrl = builder.Configuration.GetServiceUri("todoapi")?.ToString() ??
               builder.Configuration["TodoApiUrl"] ?? 
